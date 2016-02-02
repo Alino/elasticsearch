@@ -1,0 +1,16 @@
+GET /admin/masterCategories/_search
+{
+   "size": 10,
+   "query": {
+      "filtered": {
+         "query": {
+            "match": {
+               "_all": {
+                  "query": "outd",
+                  "operator": "and"
+               }
+            }
+         }
+      }
+   }
+}
