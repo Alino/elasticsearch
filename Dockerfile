@@ -22,7 +22,9 @@ RUN wget -qO /tmp/es.tgz https://download.elasticsearch.org/elasticsearch/elasti
 ENV ES_HOME /usr/share/elasticsearch
 ENV ELASTICSEARCH_HOST localhost
 ENV ES_PORT 9200
-ENV ES_HEAP_SIZE 450m
+# ES_HEAP_SIZE 256m is needed to run on 512mb RAM droplet. (Staging env)
+ENV ES_HEAP_SIZE 256m
+ENV ES_JAVA_OPTS -server
 RUN mkdir -p $ES_HOME
 RUN useradd -d $ES_HOME -M -r elasticsearch && \
     chown -R elasticsearch: $ES_HOME
