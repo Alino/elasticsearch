@@ -22,6 +22,7 @@ RUN wget -qO /tmp/es.tgz https://download.elasticsearch.org/elasticsearch/elasti
 ENV ES_HOME /usr/share/elasticsearch
 ENV ELASTICSEARCH_HOST localhost
 ENV ES_PORT 9200
+ENV ES_HEAP_SIZE 450m
 RUN mkdir -p $ES_HOME
 RUN useradd -d $ES_HOME -M -r elasticsearch && \
     chown -R elasticsearch: $ES_HOME
