@@ -9,7 +9,13 @@ curl -XPUT "http://$ELASTICSEARCH_HOST:$ES_PORT/masterproducts/product/_mapping"
         "properties": {
           "masterCategory_id": {
             "type": "string",
-            "index": "not_analyzed"
+            "fields": {
+              "raw": {
+                "type": "string",
+                "include_in_all": false,
+                "index": "not_analyzed"
+              }
+            }
           },
           "label": {
             "type": "string",
