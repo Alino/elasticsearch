@@ -15,14 +15,14 @@ else
   printf '\e[1;34m%-6s\e[m \n%s\n' 'GOING TO CREATE INDEXES AND MAPPINGS...'
   {
     cd $ES_HOME/mappings
-    ./mastercategories.index.sh
-    ./mastercategories.suggestions.mapping.sh
-    ./manufacturers.index.sh
-    ./manufacturers.suggestions.mapping.sh
+#    ./mastercategories.index.sh
+#    ./mastercategories.suggestions.mapping.sh
+#    ./manufacturers.index.sh
+#    ./manufacturers.suggestions.mapping.sh
     ./masterproducts.index.sh
     ./masterproducts.product.mapping.sh
-    ./param.index.sh
-    ./param.suggestions.mapping.sh
+#    ./param.index.sh
+#    ./param.suggestions.mapping.sh
     ./searchedqueries.index.sh
     ./searchedqueries.suggestions.mapping.sh
     cd $ES_HOME

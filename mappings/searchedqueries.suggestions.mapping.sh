@@ -5,7 +5,7 @@ curl -XPUT "http://$ELASTICSEARCH_HOST:$ES_PORT/searchedqueries/suggestions/_map
         "query" : { "type" : "string" },
         "weight": { "type" : "integer" },
         "suggest" : { "type" : "completion",
-            "index_analyzer" : "simple",
+            "analyzer": "simple",
             "search_analyzer" : "simple",
             "payloads" : true
         }
