@@ -81,8 +81,15 @@ curl -XPUT "http://$ELASTICSEARCH_HOST:$ES_PORT/masterproducts/product/_mapping"
         }
      },
      "manufacturer": {
-        "type": "string",
-        "analyzer": "slovencina"
+          "type": "string",
+          "analyzer": "slovencina",
+          "fields": {
+            "raw": {
+                "type": "string",
+                "include_in_all": false,
+                "index": "not_analyzed"
+            }
+          }
      },
      "nameAndParams": {
         "type": "string",
